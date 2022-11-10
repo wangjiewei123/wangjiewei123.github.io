@@ -44,8 +44,8 @@
     <h3 class="description"></h3>
     <div class="count-box">
       <a href="/archives"><div><strong>4</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>2</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>2</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -95,7 +95,7 @@
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a>,<a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/">分类2</a>
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>,<a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/Hexo/">Hexo</a>
   </div>
 
           
@@ -128,7 +128,7 @@
       <a data-url="http://example.com/2022/11/10/2022.11.10/" data-id="clab24y26000080tsfvap34x7" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
 
     </footer>
   </div>
@@ -156,14 +156,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/09/2022.11.9/">2022.11.9问题总结</a>
+      <a class="article-title" href="/2022/11/09/2022.11.9/">2022.11.9现场管理开发之JPA踩坑记录</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a>,<a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/">分类2</a>
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>
   </div>
 
           
@@ -175,8 +175,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2022-11-9总结"><a href="#2022-11-9总结" class="headerlink" title="2022.11.9总结"></a>2022.11.9总结</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 最简单的读</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DemoData&#125;</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> DemoDataListener&#125;</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">simpleRead</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> TestFileUtil.getPath() + <span class="string">&quot;demo&quot;</span> + File.separator + <span class="string">&quot;demo.xlsx&quot;</span>;</span><br><span class="line">       <span class="comment">// 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭</span></span><br><span class="line">       EasyExcel.read(fileName, DemoData.class, <span class="keyword">new</span> <span class="title class_">DemoDataListener</span>()).sheet().doRead();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="现场管理开发之JPA踩坑记录"><a href="#现场管理开发之JPA踩坑记录" class="headerlink" title="现场管理开发之JPA踩坑记录"></a>现场管理开发之JPA踩坑记录</h3><p>使用save()方法更新数据踩到的坑<br>1、不能更新数据</p>
+<p>使用save()方法更新数据时注意：<br>若传入的实体对象id属性有值，则会匹配id进行更新操作；若id属性为空，则会自动新增一条数据到数据库。</p>
+<p>但在我实际操作时，有时候save()方法传入的实体对象的id属性有值，却也是新插入了一条数据，这里的原因是save()方法不仅根据id是否为空来判定是否更新，还根据version版本号来判断是否是更新。</p>
+<p>在执行插入语句时，注意把版本号写入就不会有这种问题了。<br>2、多次更新数据，报StaleObjectStateException异常</p>
+<p>详细如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.orm.ObjectOptimisticLockingFailureException: Object of class [GDAppointmentHisInfo] with identifier: optimistic locking failed;</span><br><span class="line">nested exception is org.hibernate.StaleObjectStateException: Row was updated or deleted by another <span class="title function_">transaction</span> <span class="params">(or unsaved-value mapping was incorrect)</span></span><br></pre></td></tr></table></figure>
 
+<p>翻译：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ObjectOptimisticLockingFailureException:带有标识符的类[GDAppointmentHisInfo]的对象:乐观锁定失败;</span><br><span class="line">嵌套异常org.hibernate。StaleObjectStateException:行被另一个事务更新或删除(或者未保存值映射不正确)</span><br></pre></td></tr></table></figure>
+
+<p>原因：<br>网上给出的解释是StaleObjectStateException因为乐观锁以版本号来加锁，假设第一次更新时获取的数据库对象的版本号为1，执行更新操作之后，版本号变为2，而第二次更新时还是在第一次获取的数据库对象上更新（版本号还是1），因为其版本号已经改变，就抛出这个异常。</p>
+<p>解决办法：<br>在第二次更新前，重新取数据库的对象，也就是每次执行更新、删除操作，要在最新的数据库对象上进行更新。</p>
 
       
     </div>
@@ -184,7 +194,7 @@
       <a data-url="http://example.com/2022/11/09/2022.11.9/" data-id="clab234930000bstsekv28oq0" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
 
     </footer>
   </div>
@@ -212,14 +222,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/08/2022.11.8Node/">2022.11.8问题总结</a>
+      <a class="article-title" href="/2022/11/08/2022.11.8Node/">2022.11.8Jpa使用过程中遇到的坑2.0</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a>,<a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/">分类2</a>
+    <a class="article-category-link" href="/categories/%E6%80%BB%E7%BB%93/">总结</a>
   </div>
 
           
@@ -231,8 +241,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2022-11-8总结"><a href="#2022-11-8总结" class="headerlink" title="2022.11.8总结"></a>2022.11.8总结</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 最简单的读</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DemoData&#125;</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> DemoDataListener&#125;</span></span><br><span class="line"><span class="comment">    * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">simpleRead</span><span class="params">()</span> &#123;</span><br><span class="line">       <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> TestFileUtil.getPath() + <span class="string">&quot;demo&quot;</span> + File.separator + <span class="string">&quot;demo.xlsx&quot;</span>;</span><br><span class="line">       <span class="comment">// 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭</span></span><br><span class="line">       EasyExcel.read(fileName, DemoData.class, <span class="keyword">new</span> <span class="title class_">DemoDataListener</span>()).sheet().doRead();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="2022-11-8Jpa使用过程中遇到的坑2-0"><a href="#2022-11-8Jpa使用过程中遇到的坑2-0" class="headerlink" title="2022.11.8Jpa使用过程中遇到的坑2.0"></a>2022.11.8Jpa使用过程中遇到的坑2.0</h3><p>1、一定要注意如果我们在实体类中没有配置数据表的默认值，那么在存入和取出的时候应该设置。否则在取出的时候就会出现问题。<br>2、如何通过一方获取到多方实体<br>3、jsp中 jsp文件夹与上面servlet映射名最好不要一致，这样会出问题<br>4、注意！！！！一个实体类的表ID名字请设置为ID，保证不出错。</p>
+<p><strong>问题描述</strong><br>    分类和博客 多对多 双向 我这里配置中间表来实现实体类的关联<br>    我现在想要通过策略实体获取所有博客，在打印blog时，准确的说是在调用blog的getCategories时 出现stackoverflow的问题。</p>
+<p><strong>问题分析：</strong><br>    因为是双向多对多的关联查询，每一个blog实例会输出Set categories的值，而每一个Category实例则会输出Set blogs的值，因此一直递归下去知道栈溢出报错。</p>
+<p><strong>解决方法：</strong>其实一般情况下没有打印的需求</p>
+<p>遍历的时候不调用或者先将blogs设置为null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">category.getBlogs().forEach(x-&gt;&#123;</span><br><span class="line">  		x.setCategories(<span class="literal">null</span>);</span><br><span class="line">  		System.out.pringln(x);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -240,7 +254,7 @@
       <a data-url="http://example.com/2022/11/08/2022.11.8Node/" data-id="clab22l70000128tsc0v2c61f" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" rel="tag">踩坑记录</a></li></ul>
 
     </footer>
   </div>
@@ -268,14 +282,14 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/07/2022.11.7Node/">2022.11.7问题总结</a>
+      <a class="article-title" href="/2022/11/07/2022.11.7Node/">2022.11.7EasyExcel</a>
     </h1>
   
 
         <div>
           
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a>,<a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/">分类2</a>
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>,<a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/EasyExcel/">EasyExcel</a>
   </div>
 
           
@@ -287,7 +301,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2022-11-7–11-9总结"><a href="#2022-11-7–11-9总结" class="headerlink" title="2022.11.7–11.9总结"></a>2022.11.7–11.9总结</h1>
+        <h3 id="2022-11-7EasyExcel"><a href="#2022-11-7EasyExcel" class="headerlink" title="2022.11.7EasyExcel"></a>2022.11.7EasyExcel</h3><h3 id="读Excel"><a href="#读Excel" class="headerlink" title="读Excel"></a>读Excel</h3><p>DEMO代码地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/read/ReadTest.java">https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/read/ReadTest.java</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 最简单的读</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DemoData&#125;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> DemoDataListener&#125;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">simpleRead</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> TestFileUtil.getPath() + <span class="string">&quot;demo&quot;</span> + File.separator + <span class="string">&quot;demo.xlsx&quot;</span>;</span><br><span class="line">    <span class="comment">// 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭</span></span><br><span class="line">    EasyExcel.read(fileName, DemoData.class, <span class="keyword">new</span> <span class="title class_">DemoDataListener</span>()).sheet().doRead();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="写Excel"><a href="#写Excel" class="headerlink" title="写Excel"></a>写Excel</h3><p>DEMO代码地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/write/WriteTest.java">https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/write/WriteTest.java</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 最简单的写</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> com.alibaba.easyexcel.test.demo.write.DemoData&#125;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;2. 直接写即可</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">simpleWrite</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> TestFileUtil.getPath() + <span class="string">&quot;write&quot;</span> + System.currentTimeMillis() + <span class="string">&quot;.xlsx&quot;</span>;</span><br><span class="line">    <span class="comment">// 这里 需要指定写用哪个class去读，然后写到第一个sheet，名字为模板 然后文件流会自动关闭</span></span><br><span class="line">    <span class="comment">// 如果这里想使用03 则 传入excelType参数即可</span></span><br><span class="line">    EasyExcel.write(fileName, DemoData.class).sheet(<span class="string">&quot;模板&quot;</span>).doWrite(data());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="web上传、下载"><a href="#web上传、下载" class="headerlink" title="web上传、下载"></a>web上传、下载</h3><p>DEMO代码地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java">https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件下载（失败了会返回一个有部分数据的Excel）</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DownloadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 2. 设置返回的 参数</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 3. 直接写，这里注意，finish的时候会自动关闭OutputStream,当然你外面再关闭流问题不大</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@GetMapping(&quot;download&quot;)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">download</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     <span class="comment">// 这里注意 有同学反应使用swagger 会导致各种问题，请直接用浏览器或者用postman</span></span><br><span class="line">     response.setContentType(<span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span>);</span><br><span class="line">     response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">     <span class="comment">// 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系</span></span><br><span class="line">     <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> URLEncoder.encode(<span class="string">&quot;测试&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>).replaceAll(<span class="string">&quot;\\+&quot;</span>, <span class="string">&quot;%20&quot;</span>);</span><br><span class="line">     response.setHeader(<span class="string">&quot;Content-disposition&quot;</span>, <span class="string">&quot;attachment;filename*=utf-8&#x27;&#x27;&quot;</span> + fileName + <span class="string">&quot;.xlsx&quot;</span>);</span><br><span class="line">     EasyExcel.write(response.getOutputStream(), DownloadData.class).sheet(<span class="string">&quot;模板&quot;</span>).doWrite(data());</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件上传</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> UploadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> UploadDataListener&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@PostMapping(&quot;upload&quot;)</span></span><br><span class="line"> <span class="meta">@ResponseBody</span></span><br><span class="line"> <span class="keyword">public</span> String <span class="title function_">upload</span><span class="params">(MultipartFile file)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     EasyExcel.read(file.getInputStream(), UploadData.class, <span class="keyword">new</span> <span class="title class_">UploadDataListener</span>(uploadDAO)).sheet().doRead();</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -346,8 +368,8 @@
     <h3 class="description"></h3>
     <div class="count-box">
       <a href="/archives"><div><strong>4</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>2</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>2</strong><br>标签</div></a>
+      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
 
 
