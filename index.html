@@ -43,8 +43,8 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
       <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
@@ -205,6 +205,85 @@
 
 
   
+    <article id="post-2022.11.10 - 副本" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/" class="article-date">
+  <time class="post-time" datetime="2022-11-09T05:38:45.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">09</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/">git踩坑</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>,<a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/Git/">Git</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、warning: LF will be replaced by CRLF in node&#x2F;node_project.The file will have its original line endings in your working directory</p>
+<p>1、情景再现：</p>
+<p>git add添加文件到暂存区时警告</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in node/node-project.</span><br><span class="line">The file will have its original line endings in your working directory</span><br></pre></td></tr></table></figure>
+
+<p>2、原因：</p>
+<p>这是因为在windows和unix下的换行符不一样，git bush是unix风格设计的，虽然git默认会自动转换，但是有时会出问题</p>
+<p>3、解决办法：</p>
+<p>禁止自动转换</p>
+<p>git config –global core.autocrlf false</p>
+<pre><code>1
+</code></pre>
+<p>二、 ! [rejected] main -&gt; main (fetch first) error: failed to push some refs to ‘<a target="_blank" rel="noopener" href="https://github.com/xxxxxx%E2%80%99">https://github.com/xxxxxx’</a></p>
+<p>1、情景再现：</p>
+<p>git push origin main 提交代码到远程仓库时报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> ! [rejected]        main -&gt; main (fetch first)</span><br><span class="line">error: failed to push some refs to &#x27;https://github.com/xxxxxx&#x27;</span><br><span class="line">hint: Updates were rejected because the remote contains work that you do</span><br><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line">hint: (e.g., &#x27;git pull ...&#x27;) before pushing again.</span><br><span class="line">hint: See the &#x27;Note about fast-forwards&#x27; in &#x27;git push --help&#x27; for details.</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、原因：</p>
+<p>远程仓库中的代码比本地仓库中的新（存在本地仓库没有的文件）</p>
+<p>3、解决办法：</p>
+<p>将远程仓库中的代码合并到本地即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --rebase origin main</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/" data-id="clab72j1d0000y8ts43ivax21" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-2022.11.8Node" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/11/08/2022.11.8Node/" class="article-date">
@@ -308,7 +387,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 最简单的写</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> com.alibaba.easyexcel.test.demo.write.DemoData&#125;</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;2. 直接写即可</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">simpleWrite</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> TestFileUtil.getPath() + <span class="string">&quot;write&quot;</span> + System.currentTimeMillis() + <span class="string">&quot;.xlsx&quot;</span>;</span><br><span class="line">    <span class="comment">// 这里 需要指定写用哪个class去读，然后写到第一个sheet，名字为模板 然后文件流会自动关闭</span></span><br><span class="line">    <span class="comment">// 如果这里想使用03 则 传入excelType参数即可</span></span><br><span class="line">    EasyExcel.write(fileName, DemoData.class).sheet(<span class="string">&quot;模板&quot;</span>).doWrite(data());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="web上传、下载"><a href="#web上传、下载" class="headerlink" title="web上传、下载"></a>web上传、下载</h3><p>DEMO代码地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java">https://github.com/alibaba/easyexcel/blob/master/easyexcel-test/src/test/java/com/alibaba/easyexcel/test/demo/web/WebTest.java</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件下载（失败了会返回一个有部分数据的Excel）</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DownloadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 2. 设置返回的 参数</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 3. 直接写，这里注意，finish的时候会自动关闭OutputStream,当然你外面再关闭流问题不大</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@GetMapping(&quot;download&quot;)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">download</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     <span class="comment">// 这里注意 有同学反应使用swagger 会导致各种问题，请直接用浏览器或者用postman</span></span><br><span class="line">     response.setContentType(<span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span>);</span><br><span class="line">     response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">     <span class="comment">// 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系</span></span><br><span class="line">     <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> URLEncoder.encode(<span class="string">&quot;测试&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>).replaceAll(<span class="string">&quot;\\+&quot;</span>, <span class="string">&quot;%20&quot;</span>);</span><br><span class="line">     response.setHeader(<span class="string">&quot;Content-disposition&quot;</span>, <span class="string">&quot;attachment;filename*=utf-8&#x27;&#x27;&quot;</span> + fileName + <span class="string">&quot;.xlsx&quot;</span>);</span><br><span class="line">     EasyExcel.write(response.getOutputStream(), DownloadData.class).sheet(<span class="string">&quot;模板&quot;</span>).doWrite(data());</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件上传</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> UploadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> UploadDataListener&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@PostMapping(&quot;upload&quot;)</span></span><br><span class="line"> <span class="meta">@ResponseBody</span></span><br><span class="line"> <span class="keyword">public</span> String <span class="title function_">upload</span><span class="params">(MultipartFile file)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     EasyExcel.read(file.getInputStream(), UploadData.class, <span class="keyword">new</span> <span class="title class_">UploadDataListener</span>(uploadDAO)).sheet().doRead();</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件下载（失败了会返回一个有部分数据的Excel）</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> DownloadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 2. 设置返回的 参数</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;</span></span><br><span class="line"><span class="comment">  * 3. 直接写，这里注意，finish的时候会自动关闭OutputStream,当然你外面再关闭流问题不大</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@GetMapping(&quot;download&quot;)</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">download</span><span class="params">(HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     <span class="comment">// 这里注意 使用swagger 会导致各种问题，请直接用浏览器或者用postman</span></span><br><span class="line">     response.setContentType(<span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;</span>);</span><br><span class="line">     response.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">     <span class="comment">// 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系</span></span><br><span class="line">     <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> URLEncoder.encode(<span class="string">&quot;测试&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>).replaceAll(<span class="string">&quot;\\+&quot;</span>, <span class="string">&quot;%20&quot;</span>);</span><br><span class="line">     response.setHeader(<span class="string">&quot;Content-disposition&quot;</span>, <span class="string">&quot;attachment;filename*=utf-8&#x27;&#x27;&quot;</span> + fileName + <span class="string">&quot;.xlsx&quot;</span>);</span><br><span class="line">     EasyExcel.write(response.getOutputStream(), DownloadData.class).sheet(<span class="string">&quot;模板&quot;</span>).doWrite(data());</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 文件上传</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;1. 创建excel对应的实体对象 参照&#123;<span class="doctag">@link</span> UploadData&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;2. 由于默认一行行的读取excel，所以需要创建excel一行一行的回调监听器，参照&#123;<span class="doctag">@link</span> UploadDataListener&#125;</span></span><br><span class="line"><span class="comment">  * &lt;p&gt;3. 直接读即可</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="meta">@PostMapping(&quot;upload&quot;)</span></span><br><span class="line"> <span class="meta">@ResponseBody</span></span><br><span class="line"> <span class="keyword">public</span> String <span class="title function_">upload</span><span class="params">(MultipartFile file)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     EasyExcel.read(file.getInputStream(), UploadData.class, <span class="keyword">new</span> <span class="title class_">UploadDataListener</span>(uploadDAO)).sheet().doRead();</span><br><span class="line">     <span class="keyword">return</span> <span class="string">&quot;success&quot;</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,8 +446,8 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>4</strong><br>分类</div></a>
+      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
       <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
 
