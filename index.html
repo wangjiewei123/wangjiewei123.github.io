@@ -43,7 +43,7 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>2</strong><br>分类</div></a>
       <a href="/tags"><div><strong>2</strong><br>标签</div></a>
     </div>
@@ -71,9 +71,65 @@
 
         <section id="main">
   
-    <article id="post-2022.11.9-10Node" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2022.11.10" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/11/09/2022.11.9-10Node/" class="article-date">
+    <a href="/2022/11/10/2022.11.10/" class="article-date">
+  <time class="post-time" datetime="2022-11-10T10:38:45.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">10</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/10/2022.11.10/">2022.11.10问题总结</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/">分类1</a>,<a class="article-category-link" href="/categories/%E5%88%86%E7%B1%BB1/%E5%88%86%E7%B1%BB2/">分类2</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、萌新认真看教程真的很重要"><a href="#一、萌新认真看教程真的很重要" class="headerlink" title="一、萌新认真看教程真的很重要"></a>一、萌新认真看教程真的很重要</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">当我尝试hexo deploy命令时git报错</span><br><span class="line">error：RPC failed;curl 56 OpenSSL SSL_read: Connectionwas reset,errno 10054</span><br><span class="line">百度结果是：SSL证书问题或者git中版本问题</span><br><span class="line">从网上查到的解决办法：</span><br><span class="line">    删除掉.deploy_git重新clean、g、d</span><br><span class="line">但是尝试多次后并没有效果，后来通过删掉远程仓库，重新按照教程搞了一边并且后来又删除掉本地的ssh key并重新生成，添加到github中最终解决了，原因可能是我在搭建过程中漏掉了某个不起眼的环节导致部署失败，因为后来没有再出现过这个错误，所以并没有深究原因，所以仔细看教程真的很重要！！！！！</span><br><span class="line"></span><br><span class="line">顺便再记录一下几个以后会常用到的快捷命令</span><br><span class="line">    hexo clean 清除hexo缓存  头三个都可以通过缩写首字母开头来简化命令如：hexo c</span><br><span class="line">    hexo generate 生成文章</span><br><span class="line">    hexo deploy 部署</span><br><span class="line">    hexo new post name 新建文章名</span><br><span class="line">    hexo new page name 新建页面名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、插入图片时踩过的坑！"><a href="#二、插入图片时踩过的坑！" class="headerlink" title="二、插入图片时踩过的坑！"></a>二、插入图片时踩过的坑！</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/10/2022.11.10/" data-id="clab24y26000080tsfvap34x7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-2022.11.9" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/11/09/2022.11.9/" class="article-date">
   <time class="post-time" datetime="2022-11-09T10:38:45.000Z" itemprop="datePublished">
     <span class="post-month">11月</span><br/>
     <span class="post-day">09</span>
@@ -88,7 +144,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/09/2022.11.9-10Node/">2022.11.9问题总结</a>
+      <a class="article-title" href="/2022/11/09/2022.11.9/">2022.11.9问题总结</a>
     </h1>
   
 
@@ -113,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/2022.11.9-10Node/" data-id="claaevy600006e4ts0det0inx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/09/2022.11.9/" data-id="clab234930000bstsekv28oq0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
@@ -169,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/08/2022.11.8Node/" data-id="claaev8c90004e4tshpm0buhv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/08/2022.11.8Node/" data-id="clab22l70000128tsc0v2c61f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
@@ -223,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/07/2022.11.7Node/" data-id="claaeugdx0002e4ts6t0q4c12" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/07/2022.11.7Node/" data-id="clab22l6w000028tsbxuw0xaq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
@@ -277,7 +333,7 @@
     <h2 class="author">John Doe</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>4</strong><br>文章</div></a>
       <a href="/categories"><div><strong>2</strong><br>分类</div></a>
       <a href="/tags"><div><strong>2</strong><br>标签</div></a>
     </div>
