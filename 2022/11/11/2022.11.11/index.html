@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2022.11.11问题总结 | 友情链接：鼠标右键</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从教程上学习的怎么在idea中解决冲突1.什么是冲突　　冲突是指当在提交或者更新代码时被合并的文件与当前文件不一致。 　　从上面对冲突的定义来看，冲突时发生在同一个文件上的。 2.生产上冲突的场景　　常见冲突的生产场景如下  更新代码 提交代码 多个分支代码合并到一个分支时 多个分支向同一个远端分支推送代码时  　　git的合并中产生冲突的具体情况：　　&lt;1&gt;两个开发者（分支中）修改了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022.11.11问题总结">
+<meta property="og:url" content="https://wangjiewei123.github.io/2022/11/11/2022.11.11/index.html">
+<meta property="og:site_name" content="友情链接：鼠标右键">
+<meta property="og:description" content="从教程上学习的怎么在idea中解决冲突1.什么是冲突　　冲突是指当在提交或者更新代码时被合并的文件与当前文件不一致。 　　从上面对冲突的定义来看，冲突时发生在同一个文件上的。 2.生产上冲突的场景　　常见冲突的生产场景如下  更新代码 提交代码 多个分支代码合并到一个分支时 多个分支向同一个远端分支推送代码时  　　git的合并中产生冲突的具体情况：　　&lt;1&gt;两个开发者（分支中）修改了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512114951677-492298074.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115156378-519302709.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115353732-1446639400.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115638553-543190461.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512120332468-1722536800.png">
+<meta property="article:published_time" content="2022-11-11T10:38:45.000Z">
+<meta property="article:modified_time" content="2022-11-12T01:42:35.504Z">
+<meta property="article:author" content="WangJieWei">
+<meta property="article:tag" content="踩坑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512114951677-492298074.png">
+  
+    <link rel="alternate" href="/atom.xml" title="友情链接：鼠标右键" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+
+  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">友情链接:鼠标右键</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>5</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-2022.11.11" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/11/11/2022.11.11/" class="article-date">
+  <time class="post-time" datetime="2022-11-11T10:38:45.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">11</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2022.11.11问题总结
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>,<a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/Hexo/">Hexo</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="从教程上学习的怎么在idea中解决冲突"><a href="#从教程上学习的怎么在idea中解决冲突" class="headerlink" title="从教程上学习的怎么在idea中解决冲突"></a>从教程上学习的怎么在idea中解决冲突</h3><h4 id="1-什么是冲突"><a href="#1-什么是冲突" class="headerlink" title="1.什么是冲突"></a>1.什么是冲突</h4><p>　　冲突是指当在提交或者更新代码时被合并的文件与当前文件不一致。</p>
+<p>　　从上面对冲突的定义来看，冲突时发生在同一个文件上的。</p>
+<h4 id="2-生产上冲突的场景"><a href="#2-生产上冲突的场景" class="headerlink" title="2.生产上冲突的场景"></a>2.生产上冲突的场景</h4><p>　　常见冲突的生产场景如下</p>
+<ol>
+<li>更新代码</li>
+<li>提交代码</li>
+<li>多个分支代码合并到一个分支时</li>
+<li>多个分支向同一个远端分支推送代码时</li>
+</ol>
+<p>　　git的合并中产生冲突的具体情况：<br>　　&lt;1&gt;两个开发者（分支中）修改了同一个文件（不管什么地方）<br>　　&lt;2&gt;两个开发者（分支中）修改了同一个文件的名称<br>　　注意：两个分支中分别修改了不同文件中的部分，不会产生冲突，可以直接将两部分合并。</p>
+<p>　　总结：上面各种情况的本质都是，当前文件与合并文件不一致，因此不论哪种情况其解决冲突的方法是一样的。</p>
+<h4 id="3-从教程上学习怎么在idea中解决冲突"><a href="#3-从教程上学习怎么在idea中解决冲突" class="headerlink" title="3.从教程上学习怎么在idea中解决冲突"></a>3.从教程上学习怎么在idea中解决冲突</h4><p>　　模拟场景：</p>
+<p>　　假设有另个开发人员开发同一个项目，并且编写同一个文件,工作流程如下：</p>
+<p>　　1.01号程序员先上传文件conflict.txt，并继续在conflict.txt上写代码；</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512114951677-492298074.png" alt="alt"></p>
+<p>　　2.02号程序员更新项目代码，并在conflict.txt上写代码，写完后，在提交到远程服务端；</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115156378-519302709.png" alt="alt"></p>
+<p>　　3.当01号程序员把写完后，准备提交代码了，这时的正规操作手法，先更新在提交，但是在更新的时候必然会冲突，因为这时候更新的代码conflict.txt与本地仓库代码conflict.txt不一致</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115353732-1446639400.png" alt="alt"></p>
+<p>　　提交前，我要更新，冲突了：</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115638553-543190461.png" alt="alt"></p>
+<p>　　解决方案如下：</p>
+<p>　　accept yours:代表以自己的为准；</p>
+<p>　　accept theris:代表以更新下来的文件为准；</p>
+<p>　　merge:代表手动合并</p>
+<p>　　一般解决冲突我们都是选择merge</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512120332468-1722536800.png" alt="alt"></p>
+<p>　　将需要的内容点击：”&gt;&gt;”既可以合并内容到result中，不需要的内容点击“x”即可，合并完成后点击apply即可。</p>
+<p>　　值得注意的是，最将所有的“x &gt;&gt;”符号都要处理完，不需要的点击“x”,需要的点击“&gt;&gt;”</p>
+<p>　　最后，不论是什么场景下产生的冲突解决方法是一样的。</p>
+<h4 id="4-关于冲突的个人心得"><a href="#4-关于冲突的个人心得" class="headerlink" title="4.关于冲突的个人心得"></a>4.关于冲突的个人心得</h4><p>　　多人协作开发的时候,如果出现了你没有改过的文件跟你冲突了,一定要去找到当事者,说清楚是如何冲突的；</p>
+<p>　　然后协商解决,千万不要擅自拉别的分支去试图解决冲突,或找文件覆盖，更或者以自己的文件为准.</p>
+<p>　　同时记住,解决了之后,要add 和 commit 最后push.为保证万无一失,最后在冲突都解决之后,重启项目；</p>
+<p>　　保证至少不会有立即奔溃的现象发生.然后才去提交,push.</p>
+<p>　　提交的时候,一定要保持清醒,先搞清楚自己要提交的文件之间的关系,然后再提交,这样才不会有文件缺失的问题,造成奔溃.</p>
+<p>　　如果任务比较多,又开了多个分支,分别进行开发,再次强调，一定要清楚自己在各个分支上做了什么,自己要提交的是什么.最好是能做个详细的笔记，没有把握宁愿不要去提交到生产服务器.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangjiewei123.github.io/2022/11/11/2022.11.11/" data-id="clad9ki2r000054ts6oyv2f2s" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/10/2022.11.10/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">2022.11.10问题总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">友情链接：鼠标右键</h1>
+    <h2 class="blog-subtitle">       WangJieWei.Blog</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
+    <h2 class="author">WangJieWei</h2>
+    <h3 class="description"></h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>5</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>5</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="https://github.com/wangjiewei123/wangjiewei123.github.io.git" target="_blank" title="Github">
+          Github
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+        <a class="hvr-bounce-in" href="" target="_blank" title="PC端右键调出移动端长按">
+          PC端右键调出移动端长按
+        </a>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2021 - 2022Wangjiewei<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      头像-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+
+  
+<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+  
+<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+
+  
+<script src="/plugin/galmenu/GalMenu.js"></script>
+
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a target="_blank" rel="noopener" href="https://cuihuihen.github.io/" title="" class="menuItem">崔慧辰</a>
+          
+            <a target="_blank" rel="noopener" href="https://kcq123.github.io/" title="" class="menuItem">寇超强</a>
+          
+            <a target="_blank" rel="noopener" href="https://yaofuquan1.github.io/" title="" class="menuItem">姚福泉</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+            <a target="_blank" rel="noopener" href="https://muhuiling.github.io/" title="" class="menuItem">牟慧玲</a>
+          
+            <a target="_blank" rel="noopener" href="https://zhangchunjia.github.io/" title="" class="menuItem">张纯</a>
+          
+        </div>
+        
+          <audio id="audio" src="plugin/galmenu/wulusai.mp3"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

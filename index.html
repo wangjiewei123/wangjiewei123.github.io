@@ -3,23 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>友情链接：鼠标右键</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:title" content="友情链接：鼠标右键">
+<meta property="og:url" content="https://wangjiewei123.github.io/index.html">
+<meta property="og:site_name" content="友情链接：鼠标右键">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="WangJieWei">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="友情链接：鼠标右键" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   
 <link rel="stylesheet" href="/css/style.css">
@@ -43,7 +41,7 @@
     <h2 class="author">友情链接:鼠标右键</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>5</strong><br>分类</div></a>
       <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
@@ -70,6 +68,96 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-2022.11.11" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/11/11/2022.11.11/" class="article-date">
+  <time class="post-time" datetime="2022-11-11T10:38:45.000Z" itemprop="datePublished">
+    <span class="post-month">11月</span><br/>
+    <span class="post-day">11</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/11/2022.11.11/">2022.11.11问题总结</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/">新知识</a>,<a class="article-category-link" href="/categories/%E6%96%B0%E7%9F%A5%E8%AF%86/Hexo/">Hexo</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="从教程上学习的怎么在idea中解决冲突"><a href="#从教程上学习的怎么在idea中解决冲突" class="headerlink" title="从教程上学习的怎么在idea中解决冲突"></a>从教程上学习的怎么在idea中解决冲突</h3><h4 id="1-什么是冲突"><a href="#1-什么是冲突" class="headerlink" title="1.什么是冲突"></a>1.什么是冲突</h4><p>　　冲突是指当在提交或者更新代码时被合并的文件与当前文件不一致。</p>
+<p>　　从上面对冲突的定义来看，冲突时发生在同一个文件上的。</p>
+<h4 id="2-生产上冲突的场景"><a href="#2-生产上冲突的场景" class="headerlink" title="2.生产上冲突的场景"></a>2.生产上冲突的场景</h4><p>　　常见冲突的生产场景如下</p>
+<ol>
+<li>更新代码</li>
+<li>提交代码</li>
+<li>多个分支代码合并到一个分支时</li>
+<li>多个分支向同一个远端分支推送代码时</li>
+</ol>
+<p>　　git的合并中产生冲突的具体情况：<br>　　&lt;1&gt;两个开发者（分支中）修改了同一个文件（不管什么地方）<br>　　&lt;2&gt;两个开发者（分支中）修改了同一个文件的名称<br>　　注意：两个分支中分别修改了不同文件中的部分，不会产生冲突，可以直接将两部分合并。</p>
+<p>　　总结：上面各种情况的本质都是，当前文件与合并文件不一致，因此不论哪种情况其解决冲突的方法是一样的。</p>
+<h4 id="3-从教程上学习怎么在idea中解决冲突"><a href="#3-从教程上学习怎么在idea中解决冲突" class="headerlink" title="3.从教程上学习怎么在idea中解决冲突"></a>3.从教程上学习怎么在idea中解决冲突</h4><p>　　模拟场景：</p>
+<p>　　假设有另个开发人员开发同一个项目，并且编写同一个文件,工作流程如下：</p>
+<p>　　1.01号程序员先上传文件conflict.txt，并继续在conflict.txt上写代码；</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512114951677-492298074.png" alt="alt"></p>
+<p>　　2.02号程序员更新项目代码，并在conflict.txt上写代码，写完后，在提交到远程服务端；</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115156378-519302709.png" alt="alt"></p>
+<p>　　3.当01号程序员把写完后，准备提交代码了，这时的正规操作手法，先更新在提交，但是在更新的时候必然会冲突，因为这时候更新的代码conflict.txt与本地仓库代码conflict.txt不一致</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115353732-1446639400.png" alt="alt"></p>
+<p>　　提交前，我要更新，冲突了：</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512115638553-543190461.png" alt="alt"></p>
+<p>　　解决方案如下：</p>
+<p>　　accept yours:代表以自己的为准；</p>
+<p>　　accept theris:代表以更新下来的文件为准；</p>
+<p>　　merge:代表手动合并</p>
+<p>　　一般解决冲突我们都是选择merge</p>
+<p>　　<img src="https://img2018.cnblogs.com/blog/858186/201905/858186-20190512120332468-1722536800.png" alt="alt"></p>
+<p>　　将需要的内容点击：”&gt;&gt;”既可以合并内容到result中，不需要的内容点击“x”即可，合并完成后点击apply即可。</p>
+<p>　　值得注意的是，最将所有的“x &gt;&gt;”符号都要处理完，不需要的点击“x”,需要的点击“&gt;&gt;”</p>
+<p>　　最后，不论是什么场景下产生的冲突解决方法是一样的。</p>
+<h4 id="4-关于冲突的个人心得"><a href="#4-关于冲突的个人心得" class="headerlink" title="4.关于冲突的个人心得"></a>4.关于冲突的个人心得</h4><p>　　多人协作开发的时候,如果出现了你没有改过的文件跟你冲突了,一定要去找到当事者,说清楚是如何冲突的；</p>
+<p>　　然后协商解决,千万不要擅自拉别的分支去试图解决冲突,或找文件覆盖，更或者以自己的文件为准.</p>
+<p>　　同时记住,解决了之后,要add 和 commit 最后push.为保证万无一失,最后在冲突都解决之后,重启项目；</p>
+<p>　　保证至少不会有立即奔溃的现象发生.然后才去提交,push.</p>
+<p>　　提交的时候,一定要保持清醒,先搞清楚自己要提交的文件之间的关系,然后再提交,这样才不会有文件缺失的问题,造成奔溃.</p>
+<p>　　如果任务比较多,又开了多个分支,分别进行开发,再次强调，一定要清楚自己在各个分支上做了什么,自己要提交的是什么.最好是能做个详细的笔记，没有把握宁愿不要去提交到生产服务器.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://wangjiewei123.github.io/2022/11/11/2022.11.11/" data-id="clad9ki2r000054ts6oyv2f2s" class="article-share-link">分享</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-2022.11.10" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -107,25 +195,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、认真看教程真的很重要"><a href="#一、认真看教程真的很重要" class="headerlink" title="一、认真看教程真的很重要"></a>一、认真看教程真的很重要</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">当我尝试hexo deploy命令时git报错</span><br><span class="line">error：RPC failed;curl 56 OpenSSL SSL_read: Connectionwas reset,errno 10054</span><br><span class="line">百度结果是：SSL证书问题或者git中版本问题</span><br><span class="line">从网上查到的解决办法：</span><br><span class="line">    删除掉.deploy_git重新clean、g、d</span><br><span class="line">但是尝试多次后并没有效果，后来通过删掉远程仓库，重新按照教程搞了一边并且后来又删除掉</span><br><span class="line">本地的ssh key并重新生成，添加到github中最终解决了，原因可能是我在搭建过程中漏掉了</span><br><span class="line">某个不起眼的环节导致部署失败，因为后来没有再出现过这个错误，所以并没有深究原因，所以</span><br><span class="line">仔细看教程真的很重要！！！！！</span><br><span class="line"></span><br><span class="line">顺便再记录一下几个以后会常用到的快捷命令</span><br><span class="line">    hexo clean 清除hexo缓存  头三个都可以通过缩写首字母开头来简化命令如：hexo c</span><br><span class="line">    hexo generate 生成文章</span><br><span class="line">    hexo deploy 部署</span><br><span class="line">    hexo new post name 新建文章名</span><br><span class="line">    hexo new page name 新建页面名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h3 id="一、认真看教程真的很重要"><a href="#一、认真看教程真的很重要" class="headerlink" title="一、认真看教程真的很重要"></a>一、认真看教程真的很重要</h3><pre class="line-numbers language-none"><code class="language-none">当我尝试hexo deploy命令时git报错
+error：RPC failed;curl 56 OpenSSL SSL_read: Connectionwas reset,errno 10054
+百度结果是：SSL证书问题或者git中版本问题
+从网上查到的解决办法：
+    删除掉.deploy_git重新clean、g、d
+但是尝试多次后并没有效果，后来通过删掉远程仓库，重新按照教程搞了一边并且后来又删除掉
+本地的ssh key并重新生成，添加到github中最终解决了，原因可能是我在搭建过程中漏掉了
+某个不起眼的环节导致部署失败，因为后来没有再出现过这个错误，所以并没有深究原因，所以
+仔细看教程真的很重要！！！！！
+
+顺便再记录一下几个以后会常用到的快捷命令
+    hexo clean 清除hexo缓存  头三个都可以通过缩写首字母开头来简化命令如：hexo c
+    hexo generate 生成文章
+    hexo deploy 部署
+    hexo new post name 新建文章名
+    hexo new page name 新建页面名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="二、推荐使用Typora软件编辑博客！"><a href="#二、推荐使用Typora软件编辑博客！" class="headerlink" title="二、推荐使用Typora软件编辑博客！"></a>二、推荐使用Typora软件编辑博客！</h3><p>hexo与Typora的完美结合..</p>
 <p>Typora是我觉得非常好的Markdown文本编辑器可以拿来做笔记本身支持识别JAVA代码，但是需要收费，Typora对于插入图片的支持做得非常好，在文件-&gt;偏好设置进入设置。</p>
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy9HWTlaSlB4NmJNQWhrZlJCN3k3UUNtUjJpYnRFc3l6dlduYlBWejRCdUFVd2lhWFJvY0FqWjhlZFVvMGp2NHRzWjdOWHptZUQ3ZTRUUDJPa0FFWXN3dXhRLzY0MA?x-oss-process=image/format,png" alt="alt"></p>
 <h3 id="三、此外从网上找的几种插入图片办法"><a href="#三、此外从网上找的几种插入图片办法" class="headerlink" title="三、此外从网上找的几种插入图片办法"></a>三、此外从网上找的几种插入图片办法</h3><p>在 <a target="_blank" rel="noopener" href="https://blog.csdn.net/dta0502/article/details/84385460?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-84385460-blog-91389277.pc_relevant_landingrelevant&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-84385460-blog-91389277.pc_relevant_landingrelevant&utm_relevant_index=2">此网站上有详细教程</a> 上有详细教程！ 此外CSDN博客也支持MD文件上传</p>
 <h3 id="src-链接"><a href="#src-链接" class="headerlink" title="src 链接"></a>src 链接</h3><p>如果我要插入的图片，是一个外部的 src 链接地址，比如该图片存放在某网站上，那就使用 Markdown 默认的插入图片的方式，方法和插入链接很像，只是前面多了一个感叹号，如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](https://ws3.sinaimg.cn/large/005BYqpgly1g29eohl7qhj31c00u0dkz.jpg)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>alt<span class="token punctuation">]</span><span class="token punctuation">(</span>https://ws3.sinaimg.cn/large/005BYqpgly1g29eohl7qhj31c00u0dkz.jpg<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="本地绝对路径"><a href="#本地绝对路径" class="headerlink" title="本地绝对路径"></a>本地绝对路径</h3><p>当 Hexo 博客中只用到少量图片时，可以将图片统一放在 <em>source&#x2F;images</em> 文件夹中，通过 Markdown 语法访问它们。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](/images/test.jpg)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>alt<span class="token punctuation">]</span><span class="token punctuation">(</span>/images/test.jpg<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="本地相对路径"><a href="#本地相对路径" class="headerlink" title="本地相对路径"></a>本地相对路径</h3><p>图片除了可以放在统一的 images 文件夹中，还可以放在文章自己的目录中，文章的目录可以通过配置 <em>_config.yml</em>：</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-vbnet" data-language="vbnet"><code class="language-vbnet">post_asset_folder<span class="token punctuation">:</span> <span class="token keyword">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/10/2022.11.10/" data-id="clab24y26000080tsfvap34x7" class="article-share-link">Share</a>
+      <a data-url="https://wangjiewei123.github.io/2022/11/10/2022.11.10/" data-id="clab24y26000080tsfvap34x7" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
@@ -191,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/2022.11.9/" data-id="clab234930000bstsekv28oq0" class="article-share-link">Share</a>
+      <a data-url="https://wangjiewei123.github.io/2022/11/09/2022.11.9/" data-id="clab234930000bstsekv28oq0" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
@@ -205,9 +309,9 @@
 
 
   
-    <article id="post-2022.11.10 - 副本" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2022.11.10.1" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/" class="article-date">
+    <a href="/2022/11/09/2022.11.10.1/" class="article-date">
   <time class="post-time" datetime="2022-11-09T05:38:45.000Z" itemprop="datePublished">
     <span class="post-month">11月</span><br/>
     <span class="post-day">09</span>
@@ -222,7 +326,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/">git踩坑</a>
+      <a class="article-title" href="/2022/11/09/2022.11.10.1/">git踩坑</a>
     </h1>
   
 
@@ -270,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/09/2022.11.10%20-%20%E5%89%AF%E6%9C%AC/" data-id="clab72j1d0000y8ts43ivax21" class="article-share-link">Share</a>
+      <a data-url="https://wangjiewei123.github.io/2022/11/09/2022.11.10.1/" data-id="clac7jem10000agts15mh4796" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91/" rel="tag">踩坑</a></li></ul>
@@ -330,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/08/2022.11.8Node/" data-id="clab22l70000128tsc0v2c61f" class="article-share-link">Share</a>
+      <a data-url="https://wangjiewei123.github.io/2022/11/08/2022.11.8Node/" data-id="clab22l70000128tsc0v2c61f" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JPA/" rel="tag">JPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" rel="tag">踩坑记录</a></li></ul>
@@ -392,7 +496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/07/2022.11.7Node/" data-id="clab22l6w000028tsbxuw0xaq" class="article-share-link">Share</a>
+      <a data-url="https://wangjiewei123.github.io/2022/11/07/2022.11.7Node/" data-id="clab22l6w000028tsbxuw0xaq" class="article-share-link">分享</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE1/" rel="tag">标签1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE2/" rel="tag">标签2</a></li></ul>
@@ -414,8 +518,8 @@
     <div class="widget-wrap">
   <h3 class="widget-title"></h3>
   <div class="widget">
-    <h1 class="blog-title">Hexo</h1>
-    <h2 class="blog-subtitle"></h2>
+    <h1 class="blog-title">友情链接：鼠标右键</h1>
+    <h2 class="blog-subtitle">       WangJieWei.Blog</h2>
     <ul class="blog-link">
      
           <a href="/" title="Home">
@@ -443,10 +547,10 @@
   <h3 class="widget-title"></h3>
   <div class="widget">
     <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">John Doe</h2>
+    <h2 class="author">WangJieWei</h2>
     <h3 class="description"></h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>5</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>5</strong><br>分类</div></a>
       <a href="/tags"><div><strong>5</strong><br>标签</div></a>
     </div>
